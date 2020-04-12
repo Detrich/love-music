@@ -1,17 +1,20 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Home from "./Home";
+import LandingPage from "./Home";
 import Profile from "./Profile";
 import NotFound from "./NotFound"
 
-class App extends React.Component{
-    render(){
-        return(
-            <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/Profiles/:username" component={Profile} />
-                <Route exact path="*" component={NotFound} />
-            </Switch>
-        )
+function App(){
+      return (
+        <Switch>
+            <Route exact path="/" component={LandingPage} />
+            <Route path="/profile" component={Profile} />
+            <Route path="*" component={NotFound} />
+        </Switch>
+      );
     }
-}  
+
+  
+  
+
+export default App
